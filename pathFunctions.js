@@ -1,5 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const MarkdownIt = require('markdown-it');
+md = new MarkdownIt();
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
 //Funcion que valda si la ruta es absoluta o relativa, devuelve una ruta absoluta
 const validateAbsolute = (pathEntered) => {
@@ -112,3 +116,20 @@ const readFiles = (pathEntered) => {
 }
 
 module.exports.readFiles = readFiles;
+
+const obtainLinks = (file, pathFile) => {
+	const linkObj = {};
+	const linksArray = [];
+	const html = md.render(file, {});
+	const dom = new JSDOM(`${html}`);
+	const aArray = dom.window.document.getElementsByTagName('a');
+	for(let i = 0; i < aArray.length; i++){
+		linkObj.href = aArray[i].href;
+		linkObj.text = aArray[i].text;
+		linkObj.file = pathFile;
+		linksArray.push(linkObj);
+	}
+	return (linksArray);
+}
+
+module.exports.obtainLinks = obtainLinks;
