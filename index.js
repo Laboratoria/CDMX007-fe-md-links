@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const pathFunctions = require('./pathFunctions');
 
+
+
 const dataEntered = process.argv;
 
 pathFunctions.validateAbsolute(dataEntered[2])
@@ -15,7 +17,8 @@ pathFunctions.validateAbsolute(dataEntered[2])
 				filesArray.forEach(element => {
 					pathFunctions.readFiles(element)
 					.then(file =>{
-						console.log(file);
+						const linksArray = pathFunctions.obtainLinks(file, newPath);
+						console.log(linksArray);
 					})
 					.catch(error => console.error(error));
 				});
@@ -29,7 +32,10 @@ pathFunctions.validateAbsolute(dataEntered[2])
 		if(validationFile){
 			pathFunctions.readFiles(newPath)
 			.then(file =>{
-				console.log(file);
+				// console.log(file);
+				const linksArray = pathFunctions.obtainLinks(file, newPath);
+				console.log(linksArray);
+
 			})
 			.catch(error => console.error(error));
 		}
