@@ -1,9 +1,4 @@
-let myModule = require('./modulo')
-let arg = path.resolve(process.argv[2]);
+let fs = require('fs');
+console.log(fs.readFileSync('C:\\Users\\caren.DESKTOP-HM7TAJS\\OneDrive\\Documentos\\social-network\\CDMX007-social-network\\README.md' , 'utf8'))
 
-myModule(arg , (err, list) => {
-    if(err) { 
-    return console.error('Error:', err)
-    }
-    list.console.log(list)
-})
+   

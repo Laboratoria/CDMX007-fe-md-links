@@ -24,8 +24,8 @@ fs.stat(arg, (err, stats) => { //consolea error en caso de que la ruta no sea la
                 mdFiles.push(path.join(arg, file))
             }
         })
-        readingFiles(mdFiles)
-        console.log(mdFiles)
+        readingFiles(mdFiles.toString())
+        // console.log(mdFiles)
     } else {
         readingFiles(arg)
         return arg
@@ -33,6 +33,8 @@ fs.stat(arg, (err, stats) => { //consolea error en caso de que la ruta no sea la
 })
 
 readingFiles = (filePath) => {
-    console.log(fs.readFileSync(filePath , 'utf8'))
+    console.log(filePath)
+    let filex = fs.readFileSync(filePath, 'utf8')
+    console.log(filex)
 }
-
+   
