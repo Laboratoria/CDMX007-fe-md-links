@@ -1,4 +1,33 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "1.0.0",
+  "description": "Herramienta que usa Node.js, que lee y analiza archivos .md para verificar los link que contiene y retornar algunas estadisticas ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "htmlhint": "htmlhint *.html test/*.html",
+    "eslint": "eslint --ext .js test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "htmlhint": "^0.10.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DianaLiz11/CDMX007-fe-md-links.git"
+  },
+  "author": "Diana Lizbeth Muñoz Perez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DianaLiz11/CDMX007-fe-md-links/issues"
+  },
+  "homepage": "https://github.com/DianaLiz11/CDMX007-fe-md-links#readme",
+  "devDependencies": {
+    "jest": "^24.5.0"
+  }
 }
