@@ -1,0 +1,48 @@
+PARA FILTRAR ARCHIVOS POR SU EXTENSIÓN 
+
+let fs = require('fs'); //llamado al modulo filesystem
+let path = require('path'); //lamado al modulo path
+
+let arg = process.argv[2] //obteniendo ruta del archivo
+let ext = "." + process.argv[3] //obteniendo extensión del archivo (son parametros que se escribieron en la linea de comandos)
+fs.readdir(arg, (err , files) => { //readdir devuelve un array (files) con la lista de archivos que hay en la ruta del directorio
+    for (i = 0; i < files.length; i++) { //recorre array files y con path.extame detecta que extensión tiene cada archivo
+    if(path.extname(files[i]) === ext) //conficional para imprimir solo los que son iguales a la extension solicitada en la linea de comandos
+    console.log(files[i]);
+    }
+}); 
+
+PARA MODULAR 
+
+var filterFn = require('./solution_filter.js') //cargar el módulo que tiene la función
+var dir = process.argv[2] //obtener los argumentos de la linea de comando
+var filterStr = process.argv[3] //obtiene argumento de la linea de comando
+
+filterFn(dir, filterStr, function (err, list) { /*llamado a la función que se cargó 
+    se le otorgan tres argumentos, el directorio, la extension y un callback)*/
+  if (err) {
+    return console.error('There was an error:', err) //error 
+  }
+  list.forEach(function (file) { /*si no hay error se itera la lista que devolvió la función
+    filterFn para imprimir los archivos filtrados*/
+    console.log(file) //imprime los archivos filtrados que devolvió la función que está n el otro módulo
+  })
+})
+
+PARA LEER ARCHIVO CON RUTA, CONVERTIRLO UTF 8 Y CONTAR SUS SALTOS DE LÍNEA
+
+let fs = require('fs');
+//Traer modulo de file system
+let fileRoute = process.argv[2]
+/*guardar en una variable la ruta que ingresan en consola para pasarla como parametro 
+a la función de leer archivo y convertirlo a string para medir sus saltos de pags*/
+fs.readFile(fileRoute, 'utf8' , (err, content) => {
+    if(err) {
+        return console.log(err)
+    } //agregar qué hacer en caso de error
+    console.log(content.split('\n').length - 1)
+});
+/*función para leer archivo de forma asíncrona (ya no usa Sync), readFile tiene 3
+argumentos: 1 = la ruta del archivo 2 = el formato de codificación de caracteres utf8
+3 = callback que procesa el resultado y se invoca al terminar la lectura del archivo */
+
