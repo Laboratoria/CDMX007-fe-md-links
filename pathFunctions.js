@@ -118,17 +118,18 @@ const readFiles = (pathEntered) => {
 module.exports.readFiles = readFiles;
 
 const obtainLinks = (file, pathFile) => {
-	const linkObj = {};
-	const linksArray = [];
+	let linksArray = [];
 	const html = md.render(file, {});
 	const dom = new JSDOM(`${html}`);
 	const aArray = dom.window.document.getElementsByTagName('a');
 	for(let i = 0; i < aArray.length; i++){
+		let linkObj = {};
 		linkObj.href = aArray[i].href;
 		linkObj.text = aArray[i].text;
 		linkObj.file = pathFile;
-		linksArray.push(linkObj);
+		linksArray[i] = linkObj;
 	}
+
 	return (linksArray);
 }
 
