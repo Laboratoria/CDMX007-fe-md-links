@@ -16,7 +16,8 @@
     "eslint": "^5.9.0",
     "eslint-plugin-jest": "^22.1.2",
     "htmlhint": "^0.10.1",
-    "markdown-it": "^8.4.2"
+    "markdown-it": "^8.4.2",
+    "node-fetch": "^2.3.0"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,8 @@
   "homepage": "https://github.com/DianaLiz11/CDMX007-fe-md-links#readme",
   "devDependencies": {
     "jest": "^24.5.0"
+  },
+  "bin": {
+    "mdlinks": "./cli.js"
   }
 }
