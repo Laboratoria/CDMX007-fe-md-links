@@ -55,8 +55,11 @@ module.exports = (linksArray, options) => {
       fetch(linksArray[i].href)
       .then(checkStatus)
       .then(res => {
-
-        console.log(linksArray[i].file.magenta + ' ' + linksArray[i].href.cyan + ' ' + res.statusText + ' ' + res.status + ' ' + linksArray[i].text.yellow);
+        if (res.statusText === 'OK') {
+          console.log(linksArray[i].file.magenta + ' ' + linksArray[i].href.cyan + ' ' + res.statusText.green + ' ' + res.status.toString().green + ' ' + linksArray[i].text.yellow);
+        }else {
+          console.log(linksArray[i].file.magenta + ' ' + linksArray[i].href.cyan + ' ' + res.statusText.red + ' ' + res.status.toString().red + ' ' + linksArray[i].text.yellow);
+        }
 
       })
       .catch(err => console.log(err));

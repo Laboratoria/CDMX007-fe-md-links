@@ -16,7 +16,6 @@ module.exports = (pathEntered, options) => {
 						if (validationDir) {
 							pathFunctions.readDirectory(newPath, '.md')
 							.then(filesArray => {
-								// console.log(filesArray);
 								let linksFileArray = [];
 								let arrayConcat = [];
 								const filesCount = filesArray.length;
@@ -25,7 +24,6 @@ module.exports = (pathEntered, options) => {
 									.then(file =>{
 										const linksArray  = pathFunctions.obtainLinks(file, element);
 										arrayConcat = arrayConcat.concat(linksArray);
-										// console.log(linksArray);
 										linksFileArray.push(linksArray);
 										if (linksFileArray.length == filesCount) {
 											resolve (arrayConcat);
@@ -43,7 +41,6 @@ module.exports = (pathEntered, options) => {
 						if(validationFile){
 							pathFunctions.readFiles(newPath)
 							.then(file =>{
-								// console.log(file);
 								const linksArray = pathFunctions.obtainLinks(file, newPath);
 								resolve (linksArray);
 
@@ -54,7 +51,5 @@ module.exports = (pathEntered, options) => {
 					.catch(error => console.error(error));
 				})
 				.catch(error => console.error(error));
-
-
 	});
 };

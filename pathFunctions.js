@@ -7,17 +7,6 @@ const { JSDOM } = jsdom;
 
 //Funcion que valda si la ruta es absoluta o relativa, devuelve una ruta absoluta
 const validateAbsolute = (pathEntered) => {
-	// if (pathEntered != null || pathEntered != undefined) {
-	// 	if(path.isAbsolute(pathEntered)){
-	// 		return(pathEntered);
-	// 	}else {
-	// 		return(path.resolve(pathEntered));
-	// 	}
-	// } else {
-	// 	let error = new Error('no has ingresado una ruta');
-	//   return(error);
-	// }
-
 	return new Promise((resolve, reject) => {
 		if (pathEntered != null || pathEntered != undefined) {
 			if(path.isAbsolute(pathEntered)){
@@ -126,7 +115,7 @@ const obtainLinks = (file, pathFile) => {
 		let linkObj = {};
 		linkObj.href = aArray[i].href;
 		linkObj.text = aArray[i].text;
-		linkObj.file = pathFile;
+		linkObj.file = pathFile.substr(-50,50);
 		linksArray[i] = linkObj;
 	}
 
