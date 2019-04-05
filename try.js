@@ -50,9 +50,14 @@ const readingFiles = (mdRoute) => {
       return console.log(err)
     }
     let links = markdownLinkExtractor(content);
-    links.forEach(function (link) {
+    links.forEach((link) => {
+      if(process.argv[3] === "--validate"){ 
       validating(link);
-    });
+    } 
+  });
+      if(process.argv[3] === "--stats") {
+        counting(links)
+      }
   })
 }
 
@@ -64,15 +69,13 @@ SE VERIFICA EL STATUS DE CADA LINK
 const validating = (link) => {
   fetch(link)
     .then(res => {
-      let response = new Object ();
-      response.path = arg
-      response.url = res.url
-      response.status = res.status
-      response.text = res.statusText
-        console.log(response);
+      console.log(arg + " " + res.statusText + " " + res.status + " " + res.url)
     });
 }
   
+const counting = (links) => {
+  console.log('Total: ' + links.length)
+}
 
 
 /* ESTO ESTÁ PENDIENTE: (intentos en archivos links y links2 .js)
