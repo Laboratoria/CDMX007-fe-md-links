@@ -1,23 +1,31 @@
-Readme de prueba
+# Link Reviewer
 
-[Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
-ligero muy popular entre developers. Es usado en muchísimas plataformas que
+Instala **Link Reviewer.** como módulo en Node.js y verifica el estatus de los links de tu archivo Markdown.
 
-Dentro de una comunidad de código abierto, nos han propuesto crear una
-herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
-en formato `Markdown`, para verificar los links que contengan y reportar
-algunas estadísticas.
+## Instalación
 
-![md-links](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
+Desde la consola:
 
-## Introducción
+ `npm install md-links-karen`
 
-[Node.js](https://nodejs.org/es/) es un entorno de ejecución para JavaScript
-construido con el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
-Esto nos va a permitir ejecutar JavaScript en el entorno del sistema operativo,
+Una vez instalado el módulo, desde tu consola ejecuta:
 
+`md-links-karen <nombre-o-ruta-del-archivo> [opciones]`
 
-Tópicos:
+#### Para opciones puedes usar:
 
-- [Node.js](https://nodejs.org/en/).
-- [módulos (CommonJS)](https://nodejs.org/docs/latest-v0.10.x/api/modules.html).
+`--validate` 
+
+Para averiguar si el link funciona o no.
+(retorna ruta del archivo donde se encuentra link, su estatus y la url)
+
+`--stats`
+
+Para averiguar la cantidad de links que existen en tu archivo .md 
+(retorna el total de urls encontradas)
+
+###Proceso:
+
+[DIAGRAMA] (https://drive.google.com/file/d/1xujI5KITeFjozrCZF89EMmJ7SPy1FNiv/view?usp=sharing)
+
+[BOARD] (https://github.com/Karen-Mtz/CDMX007-fe-md-links/projects/1)
