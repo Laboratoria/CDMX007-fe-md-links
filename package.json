@@ -1,6 +1,6 @@
 {
-  "name": "md-links",
-  "version": "0.1.0",
+  "name": "md-links-karen",
+  "version": "1.0.0",
   "dependencies": {
     "linkinmark": "^1.0.5",
     "markdown-it": "^8.4.2",
