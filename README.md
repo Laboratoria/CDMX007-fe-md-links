@@ -1,3 +1,16 @@
+# librería mdLinks
+
+Esta libreria te permite leer los archivos Markdown e identificar los links que contiene el documento, mediante comandos el usuario puede elegir ver el listado de links o bien estadísticas del número de links existentes en el documento y el número de links rotos.
+
+## Diagrama de flujo
+
+![diagrama-flujo](./images/diagrama-flujo.jpg)
+
+
+
+
+
+
 # Markdown Links
 
 ## Preámbulo
