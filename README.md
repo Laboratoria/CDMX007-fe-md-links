@@ -26,6 +26,6 @@ Para averiguar la cantidad de links que existen en tu archivo .md
 
 ###Proceso:
 
-[DIAGRAMA] (https://drive.google.com/file/d/1xujI5KITeFjozrCZF89EMmJ7SPy1FNiv/view?usp=sharing)
+[DIAGRAMA](https://drive.google.com/file/d/1xujI5KITeFjozrCZF89EMmJ7SPy1FNiv/view?usp=sharing)
 
-[BOARD] (https://github.com/Karen-Mtz/CDMX007-fe-md-links/projects/1)
+[BOARD](https://github.com/Karen-Mtz/CDMX007-fe-md-links/projects/1)
