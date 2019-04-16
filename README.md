@@ -1,7 +1,31 @@
 # Markdown Links
 
-## Preámbulo
+Librería diseñada para verificar los links dentro de un archivo con lenguaje de marcado de texto.
 
+# Diagrama de flujo
+
+![Diagrama de Flujo](https://raw.githubusercontent.com/analhi7/CDMX007-fe-md-links/master/images/diagrama.png)
+
+
+## Board del desarrollo de la librería
+
+Esta librería se desarrolló de acuerdo al diagrama de flujo anterior y a la herramienta projects que ofrece GitHub. 
+
+![Board](https://raw.githubusercontent.com/analhi7/CDMX007-fe-md-links/master/images/Board.PNG)
+
+También se hizo uso de herramientas de organización de GitHub como issues y milestones
+
+![Issues](https://raw.githubusercontent.com/analhi7/CDMX007-fe-md-links/master/images/issues.PNG)
+
+![Milestone](https://raw.githubusercontent.com/analhi7/CDMX007-fe-md-links/master/images/milestone.PNG)
+
+Aquí se pueden ver más a detalle el uso de estas herramientas: 
+[Board](https://github.com/analhi7/CDMX007-fe-md-links/projects/1)
+[Milestone](https://github.com/analhi7/CDMX007-fe-md-links/milestones)
+
+
+## Preámbulo
+https://es.wikipedia.org/wiki/Markdown
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
 ligero muy popular entre developers. Es usado en muchísimas plataformas que
 manejan texto plano (GitHub, foros, blogs, ...), y es muy común
@@ -168,7 +192,7 @@ Por ejemplo:
 ```sh
 $ md-links ./some/example.md
 ./some/example.md http://algo.com/2/3/ Link a algo
-./some/example.md https://otra-cosa.net/algun-doc.html algún doc
+
 ./some/example.md http://google.com/ Google
 ```
 
@@ -191,7 +215,7 @@ Por ejemplo:
 ```sh
 $ md-links ./some/example.md --validate
 ./some/example.md http://algo.com/2/3/ ok 200 Link a algo
-./some/example.md https://otra-cosa.net/algun-doc.html fail 404 algún doc
+.
 ./some/example.md http://google.com/ ok 301 Google
 ```
 

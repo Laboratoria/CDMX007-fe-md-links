@@ -1,10 +1,21 @@
-const mdLinks = require('../');
+// const mdLinks = require('../');
+const readReadme = require('./readReadme.js')
 
 
-describe('mdLinks', () => {
+describe('readReadme', ()=>{
+  it('Debería ser una función',() =>{ 
+    expect(typeof readReadme.readMyFile).toBe ('function')
 
-  it('should...', () => {
-    console.log('FIX ME!');
-  });
+  })
 
-});
+})
+
+
+
+// describe('mdLinks', () => {
+
+//   it('should...', () => {
+//     console.log('FIX ME!');
+//   });
+
+// });
