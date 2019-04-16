@@ -1,4 +1,52 @@
 {
-  "name": "md-links",
-  "version": "0.1.0"
+  "name": "markdown-find-links",
+  "version": "1.1.0",
+  "bin": {
+    "mdLinks": "./mdLinks.js"
+  },
+  "scripts": {
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "test": "jest --coverage",
+    "start": "node ./mdLinks.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "eslint": "^5.9.0",
+    "jsdom": "^14.0.0",
+    "markdown-it": "^8.4.2",
+    "node-emoji": "^1.10.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.0.0",
+    "jest": "^24.5.0",
+    "eslint-plugin-jest": "^22.1.2"
+  },
+  "description": "Con esta librería podrás encontrar todos los links que contienen tus documentos markdown, además podrás validar si están rotos o no",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pau-za/CDMX007-fe-md-links.git"
+  },
+  "keywords": [
+    "markdown",
+    "files",
+    "links",
+    "count",
+    "find",
+    "broken",
+    "validate",
+    "mdLinks"
+  ],
+  "author": "Pau-Za",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pau-za/CDMX007-fe-md-links/issues"
+  },
+  "homepage": "https://github.com/Pau-za/CDMX007-fe-md-links#readme"
 }
